@@ -1,5 +1,7 @@
 sudo docker container ls -a
 
-sudo psql "postgresql://postgres:postgres@localhost/postgres"
+# INSTALL PSQL
+sudo apt install postgresql-client
 
+sudo psql "postgresql://postgres:postgres@localhost/postgres"
 
