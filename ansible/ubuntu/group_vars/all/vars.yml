@@ -1,0 +1,8 @@
+username: ubuntu
+
+package:
+  - tmux
+  - neofetch
+  - htop
+  - vim
+  - speedtest-cli

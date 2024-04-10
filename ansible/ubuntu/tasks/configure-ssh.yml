@@ -1,0 +1,16 @@
+- name: Disable SSH password auth
+  lineinfile:
+    dest: /etc/ssh/sshd_config
+    regexp: "^#PasswordAuthentication yes"
+    # AFTER THIS UPDATE, NO ONE WILL BE ABLE TO CONNECT VIA ssh USING PASSWORD.
+    # IN ORDER TO CONNECT, public key MUST EXIST IN authorized_keys
+    line: "PasswordAuthentication no"
+  register: sshd_config
+
+- name: Restart SSH daemon
+  sysvinit:
+    # ssh IS THE sshd SERVICE FOR UBUNTU
+    name: ssh
+    enabled: true
+    state: restarted
+  when: sshd_config.changed

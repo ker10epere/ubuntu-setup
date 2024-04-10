@@ -1,0 +1,4 @@
+- name: Install essential packages
+  package:
+    name: "{{ package }}"
+    state: latest
