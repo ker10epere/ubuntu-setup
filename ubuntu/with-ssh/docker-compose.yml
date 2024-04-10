@@ -1,0 +1,22 @@
+name: ubuntu
+
+services:
+  ssh-1:
+    build:
+      context: .
+      tags:
+        - ubuntu-ssh:dev-test
+    ports:
+      - 2221:22
+  # ssh-2:
+  #   build: .
+  #   ports:
+  #     - 2222:22
+  # ssh-3:
+  #   build: .
+  #   ports:
+  #     - 2223:22
+  # ssh-4:
+  #   build: .
+  #   ports:
+  #     - 2224:22
