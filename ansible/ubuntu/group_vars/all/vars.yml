@@ -1,8 +1,10 @@
 username: ubuntu
 
 package:
-  - tmux
-  - neofetch
+  # - tmux
+  # - neofetch
   - htop
   - vim
-  - speedtest-cli
+  # - speedtest-cli
+
+shell: /bin/bash

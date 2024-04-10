@@ -1,8 +1,5 @@
----
-- hosts: all
+- hosts: webserver
   become: yes
-
-  tasks:
-    - import_tasks: ../tasks/init-vm-config.yml
-    - import_tasks: ../tasks/install-dev-pkgs.yml
-    # - import_tasks: ../tasks/configure-ssh.yml
+  roles:
+    - role: system
+  

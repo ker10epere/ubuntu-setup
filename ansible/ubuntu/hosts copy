@@ -1,0 +1,7 @@
+[webserver]
+localhost:2222
+localhost:2223
+localhost:2224
+# server-2222 ansible_host=localhost ansible_port=2222 ansible_user='ubuntu'
+# server-2223 ansible_host=localhost ansible_port=2223 ansible_user='ubuntu'
+# server-2224 ansible_host=localhost ansible_port=2224 ansible_user='ubuntu'

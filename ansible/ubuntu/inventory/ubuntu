@@ -1,0 +1,2 @@
+[ubuntu]
+server-2221 ansible_host=localhost ansible_port=2221 ansible_user='root'

@@ -1,0 +1,7 @@
+---
+- name: Restart SSH daemon
+  sysvinit:
+    # ssh IS THE sshd SERVICE FOR UBUNTU
+    name: ssh
+    enabled: true
+    state: restarted

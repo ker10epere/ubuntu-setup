@@ -1,5 +1,0 @@
-[ubuntu]
-server-2221 ansible_host=localhost ansible_port=2221 ansible_user='ubuntu'
-; server-2222 ansible_host=localhost ansible_port=2222 ansible_user='ubuntu'
-; server-2223 ansible_host=localhost ansible_port=2223 ansible_user='ubuntu'
-; server-2224 ansible_host=localhost ansible_port=2224 ansible_user='ubuntu'
