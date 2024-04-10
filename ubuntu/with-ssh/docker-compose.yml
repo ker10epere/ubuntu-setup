@@ -29,15 +29,3 @@ services:
       - 2224:22
     depends_on:
       - ssh
-  # ssh3:
-  #   build: .
-  #   ports:
-  #     - 2223:22
-  #   depends_on:
-  #     - ssh2
-  # ssh4:
-  #   build: .
-  #   ports:
-  #     - 2224:22
-  #   depends_on:
-  #     - ssh3
