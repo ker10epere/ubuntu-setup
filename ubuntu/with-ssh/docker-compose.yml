@@ -1,22 +1,43 @@
 name: ubuntu
 
 services:
-  ssh-1:
+  ssh:
     build:
       context: .
-      tags:
-        - ubuntu-ssh:dev-test
+      dockerfile: Dockerfile
+    pull_policy: build
     ports:
       - 2221:22
-  # ssh-2:
-  #   build: .
-  #   ports:
-  #     - 2222:22
-  # ssh-3:
+  sshb:
+    image: ubuntu-ssh:latest
+    pull_policy: build
+    ports:
+      - 2222:22
+    depends_on:
+      - ssh
+  sshc:
+    image: ubuntu-ssh:latest
+    pull_policy: build
+    ports:
+      - 2223:22
+    depends_on:
+      - ssh
+  sshd:
+    image: ubuntu-ssh:latest
+    pull_policy: build
+    ports:
+      - 2224:22
+    depends_on:
+      - ssh
+  # ssh3:
   #   build: .
   #   ports:
   #     - 2223:22
-  # ssh-4:
+  #   depends_on:
+  #     - ssh2
+  # ssh4:
   #   build: .
   #   ports:
   #     - 2224:22
+  #   depends_on:
+  #     - ssh3

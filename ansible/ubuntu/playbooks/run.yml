@@ -1,5 +1,6 @@
-- hosts: webserver
+- hosts: all
   become: yes
+
   roles:
     - role: system
-  
+      

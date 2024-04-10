@@ -11,9 +11,8 @@
     - regexp: "^PasswordAuthentication"
       line: "PasswordAuthentication no"
     - regexp: "^PermitRootLogin"
-      line: "PermitRootLogin no"
-    - regexp: "^Port"
-      line: "Port {{ ssh_port }}"
+      # SET TO NO AND YOU WONT BE ABLE TO SSH TO ROOT USER
+      line: "PermitRootLogin yes"
     - regexp: "^UseDNS"
       line: "UseDNS no"
     - regexp: "^PermitEmptyPasswords"
