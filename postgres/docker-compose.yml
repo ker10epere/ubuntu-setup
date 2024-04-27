@@ -3,11 +3,15 @@ services:
     image: postgres:alpine3.19@sha256:1d74239810c19ed0dbb317acae40974e673865b2d565a0d369e206159d483957
     restart: always
     volumes:
-      - ./data/:/var/lib/postgresql/data/pgdata/
+      - pgdata:/var/lib/postgresql/data
     environment:
       POSTGRES_DB: postgres
       POSTGRES_USER: postgres
       POSTGRES_PASSWORD: postgres
-      PGDATA: /var/lib/postgresql/data/pgdata/
+      PGDATA: /var/lib/postgresql/data
     ports:
       - 5432:5432
+
+volumes:
+  pgdata:
+    name: pgdata
