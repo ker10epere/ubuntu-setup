@@ -1,6 +1,7 @@
 docker build --progress=plain -t ubuntu-ssh:0.0.1 .
 docker buildx prune -af
-docker run -p 9000:22 ubuntu-ssh:0.0.1
+# "-it" is important to be able to terminate spawned ssh
+docker run -it -p 9000:22 ubuntu-ssh:0.0.1
 
 docker container ls -a | grep ubuntu-ssh:0.0.1 | awk -F' ' '{print $1}' | xargs -I {} docker kill {}
 docker container ls -a | grep ubuntu-ssh:0.0.1 | awk -F' ' '{print $1}' | xargs -I {} docker rm {}
