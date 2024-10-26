@@ -15,6 +15,8 @@ ll .ssh/
 # DUPLICATE TO HAVE UBUNTU AND CLIENT SSH THE SAME
 cp -r .ssh/ .ssh-client/
 
+sudo chown -R ker:ker .ssh/
+
 # CHANGE OWNER AND GROUP FOR UBUNTU SSH's
 sudo chown -R 0:0 .ssh/
 

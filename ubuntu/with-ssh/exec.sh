@@ -1,4 +1,9 @@
-docker build . -t ubuntu-ssh
+docker build --progress=plain -t ubuntu-ssh:0.0.1 .
+docker buildx prune -af
+docker run -p 9000:22 ubuntu-ssh:0.0.1
+
+docker container ls -a | grep ubuntu-ssh:0.0.1 | awk -F' ' '{print $1}' | xargs -I {} docker kill {}
+docker container ls -a | grep ubuntu-ssh:0.0.1 | awk -F' ' '{print $1}' | xargs -I {} docker rm {}
 
 docker compose up
 
