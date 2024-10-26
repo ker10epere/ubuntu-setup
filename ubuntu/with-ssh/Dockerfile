@@ -17,6 +17,12 @@ RUN chmod 700 /root/.ssh/
 RUN chmod 600 /root/.ssh/authorized_keys
 RUN chown -R root:root /root/.ssh/
 
+# RUN cat /etc/ssh/sshd_config
+# RUN cat /etc/pam.d/sshd
+
+# Make ssh connection passwordless
+RUN sed -i s/#PubkeyAuthentication/PubkeyAuthentication/g /etc/ssh/sshd_config
+
 # Set up configuration for SSH
 RUN mkdir -p /var/run/sshd/ && \
     sed -i 's/#PermitRootLogin prohibit-password/PermitRootLogin yes/' /etc/ssh/sshd_config && \
