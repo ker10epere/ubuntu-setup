@@ -1,9 +1,17 @@
 # Use the official image as a parent image
-FROM ubuntu:jammy@sha256:77906da86b60585ce12215807090eb327e7386c8fafb5402369e421f44eff17e
+FROM ubuntu:rolling@sha256:eea047b4b181f2d3aeafbc0ce5294a2bbb3b98153a68b9ed4bc573d871ca9450
 
-RUN mkdir /root/.ssh
+RUN mkdir /root/.ssh/
 
 COPY .ssh/authorized_keys /root/.ssh/
+
+#    https://jonasbn.github.io/til/ssh/permissions_on_ssh_folder_and_files.html
+#    .ssh/   700 (drwx------)
+#    public key (.pub file)   644 (-rw-r--r--)
+#    private key (id_rsa)     600 (-rw-------)
+#    Your home directory should not be writeable by the group or others: 755 (drwxr-xr-x).
+#    Configuration file: .ssh/config          600 (-rw-------)
+#    authorized_keys          600 (-rw-------)
 
 RUN chmod 700 /root/.ssh/
 # RUN chmod 600 /home/ubuntu/.ssh/id_ed25519
