@@ -2,6 +2,8 @@ name: ubuntu
 
 services:
   ssh:
+    image: ubuntu-ssh:latest
+    container_name: ssh-a
     build:
       context: .
       dockerfile: Dockerfile
@@ -9,6 +11,7 @@ services:
     ports:
       - 2221:22
   sshb:
+    container_name: ssh-b
     image: ubuntu-ssh:latest
     pull_policy: build
     ports:
@@ -16,6 +19,7 @@ services:
     depends_on:
       - ssh
   sshc:
+    container_name: ssh-c
     image: ubuntu-ssh:latest
     pull_policy: build
     ports:
@@ -23,6 +27,7 @@ services:
     depends_on:
       - ssh
   sshd:
+    container_name: ssh-d
     image: ubuntu-ssh:latest
     pull_policy: build
     ports:

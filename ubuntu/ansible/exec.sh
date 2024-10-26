@@ -5,3 +5,7 @@ docker run -it -p 9000:22 ansible-ssh:0.0.1
 
 
 docker compose -f ./manage-node/docker-compose.yml  up
+
+docker image prune -fa
+docker container prune -f
+docker image ls
