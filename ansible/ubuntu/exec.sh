@@ -9,6 +9,8 @@ ansible ubuntu -m ping --ask-vault-pass all
 
 ansible webserver -m ping --ask-vault-pass
 
+ansible-playbook playbooks/run.yml
+
 # RUNNING run.yml PLAYBOOK
 # -K ASKS FOR SUDO PASSWORD
 ansible-playbook playbooks/run.yml --ask-vault-pass -K

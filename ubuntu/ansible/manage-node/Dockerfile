@@ -5,8 +5,8 @@ FROM ubuntu:rolling@sha256:eea047b4b181f2d3aeafbc0ce5294a2bbb3b98153a68b9ed4bc57
 RUN apt update -y
 RUN apt upgrade -y
 RUN apt install -y openssh-server
-# Uncomment sudo [optional]
-# apt install sudo -y
+# Sudo required for our Exercise
+RUN apt install sudo -y
 
 #
 RUN apt install software-properties-common -y

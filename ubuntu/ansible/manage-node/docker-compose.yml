@@ -1,0 +1,31 @@
+name: ubuntu
+
+services:
+  ssh:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    pull_policy: build
+    ports:
+      - 2221:22
+  sshb:
+    image: ubuntu-ssh:latest
+    pull_policy: build
+    ports:
+      - 2222:22
+    depends_on:
+      - ssh
+  sshc:
+    image: ubuntu-ssh:latest
+    pull_policy: build
+    ports:
+      - 2223:22
+    depends_on:
+      - ssh
+  sshd:
+    image: ubuntu-ssh:latest
+    pull_policy: build
+    ports:
+      - 2224:22
+    depends_on:
+      - ssh
